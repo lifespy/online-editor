@@ -12,19 +12,19 @@ export default async function handler(request, response) {
     let { id, title, password } = request.body;
 
     if (!id) {
-        throw new Error("id required");
+        throw new Error("必须填写id");
     }
 
     if (!title) {
-        throw new Error("title required");
+        throw new Error("必须填写标题");
     }
 
     if (title.length < 6) {
-        throw new Error("title at least 6 charaters");
+        throw new Error("标题最少需要6个字");
     }
 
     if (!password) {
-        throw new Error("password required");
+        throw new Error("必须填写密码");
     }
 
     const client = await clientPromise;
