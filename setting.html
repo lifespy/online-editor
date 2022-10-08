@@ -24,12 +24,12 @@
         </div> -->
         <div class="bg-green-50 p-4 text-2xs  ">
             <div>
-                <div>Editable URL:
+                <div>可编辑的链接:
                     <span id="editable-url"></span>
                 </div>
             </div>
             <div class="mt-2">
-                <div>ViewOnly URL:
+                <div>只可查阅链接:
                     <span id="view-url"></span>
                 </div>
             </div>
@@ -46,8 +46,8 @@
 
         $(function () {
             $.get('/api/doc-get?id=' + id, function (doc) {
-                $('#editable-url').text('https://doc.op52.com/doc.html?id=' + doc.id)
-                $('#view-url').text('https://doc.op52.com/doc.html?vid=' + doc.vid)
+                $('#editable-url').text('https://doc.guoer.cc/doc.html?id=' + doc.id)
+                $('#view-url').text('https://doc.guoer.cc/doc.html?vid=' + doc.vid)
             })
         });
     </script>
