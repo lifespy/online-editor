@@ -10,7 +10,7 @@ export default async function handler(request, response) {
     let doc = await collection.findOne({ id });
 
     if (!doc) {
-        throw new Error("no doc");
+        throw new Error("文档不存在");
     }
 
     let today = new Date().toDateString();
