@@ -85,7 +85,7 @@
         }
         let id = new URLSearchParams(location.search).get('id');
         $('#set-btn').attr('href', 'setting.html?id=' + id);
-        // let $textarea = $('#doc-textarea');
+
         let $saveBtn = $('#save-btn')
         $saveBtn.on('click', function () {
             if ($saveBtn.hasClass('loading')) {
@@ -94,8 +94,8 @@
             $saveBtn.addClass('loading');
             $.post('/api/doc-save', { id: id, content: texteditor.value() }, function (data) {
                 $saveBtn.removeClass('loading');
-
-                doc.content = texteditor.value();
+                let textarea = $('#doc-textarea');
+                textarea.content = texteditor.value();
                 store.set('doc-' + doc.id, doc);
 
                 toastr["info"]("保存成功")
