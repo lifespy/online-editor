@@ -61,7 +61,7 @@
                 </path>
             </svg>
         </div>
-        <textarea id="doc-textarea" data-expandable placeholder="write here ..." class="hidden"></textarea>
+        <textarea id="doc-textarea" data-expandable placeholder="在这创作 ..." class="hidden"></textarea>
     </div>
     <script>
         var texteditor = null;
@@ -98,10 +98,10 @@
                 doc.content = texteditor.value();
                 store.set('doc-' + doc.id, doc);
 
-                toastr["info"]("save successful")
+                toastr["info"]("保存成功")
             }).fail(function () {
                 $saveBtn.removeClass('loading');
-                toastr["error"]("save fail")
+                toastr["error"]("保存失败")
             })
         });
 
@@ -127,7 +127,7 @@
                 // $textarea.show().val(doc.content);
                 // $textarea[0].style.removeProperty('height');
                 // $textarea[0].style.height = ($textarea[0].scrollHeight + 2) + 'px';
-                $saveBtn.removeClass('loading').text('save')
+                $saveBtn.removeClass('loading').text('保存')
                 let list = store.get('doc-list');
                 list = list ? JSON.parse(list) : [];
 
