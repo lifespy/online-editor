@@ -96,9 +96,26 @@
 			</ul>
 		</div>
 	</div>
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js"></script>
 	<script>
-
+		toastr.options = {
+			"closeButton": false,
+			"debug": false,
+			"newestOnTop": false,
+			"progressBar": false,
+			"positionClass": "toast-bottom-center",
+			"preventDuplicates": false,
+			"onclick": null,
+			"showDuration": "200",
+			"hideDuration": "500",
+			"timeOut": "1000",
+			"extendedTimeOut": "500",
+			"showEasing": "swing",
+			"hideEasing": "linear",
+			"showMethod": "fadeIn",
+			"hideMethod": "fadeOut"
+		}
 
 		let codeToDoc = function () {
 			let no = $('#code-input').val();
@@ -114,7 +131,7 @@
 				if (code) {
 					location.href = "/doc.html?id=" + code.id
 				} else {
-					alert('文档不存在')
+					toastr.error("文档不存在")
 				}
 			})
 		}
